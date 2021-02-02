@@ -4,7 +4,7 @@
  do a shell tutorial, and learn as many of the details as you can
 
 
-2. Reading reference-level material is a skill that you can get or improve through practice... in linux and unix, the reference stuff is in the man pages... so, 
+2.Reading reference-level material is a skill that you can get or improve through practice... in linux and unix, the reference stuff is in the man pages... so, 
 I'd suggest to read at least one man page every day, to at least discover the common structures of them
 
 3.Reading software source code

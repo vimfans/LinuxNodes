@@ -1,17 +1,20 @@
-                                                               UDEV
-udev(user space /dev): is a device manager for the Linux kernel. Udev primarily manages device nodes in the /dev directory. At the same time, udev also handles all user space events
+## UDEV
+##### udev(user space /dev):
+> is a device manager for the Linux kernel. Udev primarily manages device nodes in the /dev directory. At the same time, udev also handles all user space events
 raised when hardware devices added into the system or moved from it.
 
-Rationale:
-It's an operating system's kernel that is responsible for providing an abstract interface of the hardware to the rest of the software. Being a monolithic kernel , the Linux kernel does 
+####Rationale:
+>It's an operating system's kernel that is responsible for providing an abstract interface of the hardware to the rest of the software. Being a monolithic kernel , the Linux kernel does 
 exactly that, and device drivers are part of the Linux kernel , which make up more than 50% of its source code.
 To be able to deal with peripheral devices that are hotplug-capable in a user-friendly way, a part of handling all of these hotplug-capable hardware devices was handled over from kernel 
 to a daemon running in user-space. Running in user space serves security and stability purposes.
 
 
-The udev, as a whole, is dividing into three parts:
-1.Library  libudev that allows access to device information.
-2.User space daemon udevd that manages the virtual /dev.
+The udev, as a whole, is dividing into three parts:  
+> 1.Library  libudev that allows access to device information.  
+>
+2.User space daemon udevd that manages the virtual /dev.  
+>
 3.Administrative command-line utility udevadm for diagnostics.
 
 
