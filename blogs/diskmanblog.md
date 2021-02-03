@@ -6,14 +6,14 @@
 在学习磁盘管理时，经常看到HDD、SSD这些东西。HDD,全称为Hard Disk Drive. SSD,全称为Solid State Disk. 首先来谈一下，HDD。  
 
 > 一直不理解，Hard Disk 是硬盘的意思，但是为什么大家谈到硬盘要用Hard Disk Drive呢？这就要从硬盘的工作原理开始谈起了。最开始，程序员是把代码、数据存储在磁带上的(tape)。对，就是我们熟悉的用来听歌的磁带。 回想起，用磁带听歌的美好时光，当时想听回放，就要按下回退键，然后再播放。从这里，就可以发现磁带访问的局限性----只能顺序读取。慢慢的，软盘(floppy disk)的出现弥补了，磁带的顺序读取的局限性。但是,软盘的存储空间不大，有时为了存储程序、数据，需要好多张软盘。再往后，就出现了硬盘的概念。下图展示的是一个硬盘主要的部件:  
- ![HDD](assets/hard-disk.png)  
+ ![HDD](assets/hard-disk.png?row=true)  
 从上图我们可以看到，硬盘如果想正常工作，是需要其他部件来协同合作的。从硬盘中读取数据的方式，是通过旋转磁盘，由磁头来读取磁盘中的数据。一个硬盘，由多张磁盘叠加起来，每一层正反面都会有一个磁头来读取数据。最开始，硬盘与这些移动部件是分离的，后来慢慢的把他们组合在了一起，所以Hard Disk Drive 用来指硬盘+移动部件。
 
 
 ***SSD***(Solid-State-Disk)   
 > 固态硬盘:顾名思义，是不需要移动部分的部件,就可以存储、读取数据。因为没有了移动部分的部件，它在体积上要比HDD小。而且，在读写数据时，不会出现噪音。(HDD的工作原理，是需要转动硬盘，所以，有时会出现噪音)。
-![固态硬盘](assets/solid-state-disk-back.png)
-![固态硬盘](assets/solid-state-disk-front.png)  
+![固态硬盘](assets/solid-state-disk-back.png?row=true)
+![固态硬盘](assets/solid-state-disk-front.png?row=true)  
   
     
 
@@ -35,18 +35,18 @@
 从上面的例子中，不难发现，每一个独立的分区，相当于一整块硬盘，彼此之间互不干扰。那么Linux是如何实现分区的呢？  
 *** Partition Table***  
 > Linux系统，通过分区表，来实现磁盘的分区。  
-> ![Linux 分区表](assets/partition_table.png)  
+> ![Linux 分区表](assets/partition_table.png?row=true)  
 分区表分为两类：MBR(master boot record), GUID partition table(GPT). MBR比较老，一般用于BIOS的电脑，而GPT比较常用，GPT是UEFI(Unifed extensible firmware interface)的一般分。
 >
 ***MBR 与 GPT的区别:***  
 MBR最多只能分为4个主分区，可以通过扩展分区，来创建逻辑分区。如下图:  
-![逻辑分区](assets/logical_partition.png)  
+![逻辑分区](assets/logical_partition.png?row=true)  
 我们可以通过下面的命令，来查看我们的分区表：
 ``` bash
 sudo parted -l  
 sudo fdisk -l
 ```
-![分区表](assets/parted_result_cmd.png)
+![分区表](assets/parted_result_cmd.png?row=true)
 从图中可以看出，一个500G的硬盘被分为了3个分区。
 
 
